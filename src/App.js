@@ -1,9 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Create from './components/Create';
-import Login from './components/Login';
+import Login from './components/Auth/login/Login';
 import ForgotPassword from './components/ForgotPassword';
 import Search from './components/Search';
 import AllLinks from './components/AllLinks';

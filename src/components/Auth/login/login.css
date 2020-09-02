@@ -1,0 +1,42 @@
+/* Style inputs, select elements and textareas */
+input {
+    width: 100%;
+    padding: 2%;
+    margin: 1%;
+    border: 1px solid;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: black;
+    cursor: pointer;
+    float: right
+  }
+  
+  /* Style the label to display next to the inputs */
+  label {
+    padding: 1%;
+    display: inline-block;
+  }
+  
+  /* Style the container */
+  .login-container {
+    border-radius: 5px;
+    padding: 2% 20%;
+    text-align: center;
+    position: relative;
+  }
+  form {
+      width: 50%;
+      margin: auto
+  }
+  
+   button {
+       margin: 1%;
+       padding: 1%;
+       border-radius: 1em;
+       background-color: #ff9bcf;
+   }
+   button:hover {
+       cursor: pointer;
+       background-color: #fcb0d7;
+      
+   }
