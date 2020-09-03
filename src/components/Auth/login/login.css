@@ -1,14 +1,15 @@
 /* Style inputs, select elements and textareas */
 input {
     width: 100%;
-    padding: 2%;
+    padding: 4%;
     margin: 1%;
-    border: 1px solid;
+    border: 1px solid gray;
     border-radius: 4px;
     box-sizing: border-box;
     color: black;
     cursor: pointer;
-    float: right
+    float: right;
+    font-size: 19px;
   }
   
   /* Style the label to display next to the inputs */
@@ -23,20 +24,33 @@ input {
     padding: 2% 20%;
     text-align: center;
     position: relative;
-  }
+    height: 100vh;
+    /* background-image: url("../../../assets/slide2.jpg");
+  background-position:'center';
+  background-size: 'cover';
+  background-repeat: 'no-repeat';
+        object-fit: cover; */
+  background-color: rgb(255, 186, 85);
+    }
   form {
       width: 50%;
       margin: auto
   }
   
    button {
-       margin: 1%;
-       padding: 1%;
+       margin: 3%;
+       padding: 4%;
        border-radius: 1em;
-       background-color: #ff9bcf;
+       background-color: rgb(255, 186, 85);
+       font-size: 19px;
+       border: none;
+       font-weight: bold;
    }
    button:hover {
        cursor: pointer;
-       background-color: #fcb0d7;
-      
+       background-color: #ff66b6;  
+       border: none;
    }
+button:active {
+border: none;
+}

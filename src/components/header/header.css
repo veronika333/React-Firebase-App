@@ -3,19 +3,18 @@
     position: relative;
     width: 100%;
     display: inline-block;
-    padding-left: 2%;
     vertical-align:top;
+    padding: 2% 0;
   }
     .logo {
         float: left;
-        margin: 2% 3%;
         display: inline-block;
     }
   .menu {
       font-weight: bold;
       padding-top: 1%;
       display: inline-block;
-      vertical-align:top;
+     width: 60%;
       position: relative;
   }
 
@@ -32,8 +31,9 @@
     color: black;
     margin: 1% 2%;
     display: inline-block;
+    float: right;
 }
 .link:hover {
-    border: solid;
+    text-decoration: underline;
     padding: 1%
 }
