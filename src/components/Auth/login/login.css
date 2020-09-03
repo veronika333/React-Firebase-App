@@ -54,3 +54,9 @@ input {
 button:active {
 border: none;
 }
+.error-input {
+border: solid red;
+}
+.error-text {
+color: red
+}

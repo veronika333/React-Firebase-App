@@ -2,6 +2,7 @@ import React, {useState } from 'react';
 import './login.css';
 import useFormValid from "./useFormValid";
 import validateLogin from "./validateLogin";
+import firebase from '../../firebase';
 
 //using custom hook useValid for form validation
 //creating an object to have properties and reuse it
@@ -15,8 +16,20 @@ export default function Login(props) {
 const [login, setLogin] = useState(true);
 //call the custom hook in the top, passing initial state:
 //validateLogin - second argument in the hook
-const { handleSubmit, handleBlur, handleChange, values, errors, submitting } = useFormValid(INITIAL_STATE, validateLogin);
-    return (
+const { handleSubmit, handleBlur, handleChange, values, errors, submitting } = useFormValid(INITIAL_STATE, validateLogin, authenticateUser);
+   
+//the function will call login or register method of firebase instance
+async function authenticateUser(){
+    const {name, email, password } = values;
+    //first determin, which to call
+    const response = 
+login ? await firebase.login(email, password) //if login is true, excecute login method
+: await firebase.register(name, email, password); //otherwise excecute register method
+console.log({ response })
+}
+
+
+return (
         <div className="login-container">
             <h2>{login ? "Login" : "Create Account"}</h2>
             <form onSubmit={handleSubmit}>

@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 
- function useFormValid(initialState, validate) {
+ function useFormValid(initialState, validate, authenticate) {
   const [values, setValues] = useState(initialState);
 const [errors, setErrors] = useState({});
 const [submitting, setSubmitting] = useState(false);
@@ -10,7 +10,7 @@ useEffect(() => {
 if(submitting){
 const noErrors = Object.keys(errors).length === 0;
 if (noErrors){
-    console.log('authenticated', values);
+    authenticate();
     setSubmitting(false)
 }
 //otherwise if there are errors
@@ -43,7 +43,7 @@ function handleSubmit(event){
     const validationErrors = validate(values);
     setErrors(validationErrors);
     setSubmitting(true)
-    console.log({values})
+    //console.log({values})
 }
 //return function to make them available in Login, and return state object's values
   return { handleSubmit, handleBlur, handleChange, values, errors, submitting }
