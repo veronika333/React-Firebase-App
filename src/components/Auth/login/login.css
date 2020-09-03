@@ -37,21 +37,23 @@ input {
       margin: auto
   }
   
-   button {
-       margin: 3%;
-       padding: 4%;
+   .forgot, button {
+       margin: 4%;
+       padding: 1em;
        border-radius: 1em;
        background-color: rgb(255, 186, 85);
        font-size: 19px;
        border: none;
        font-weight: bold;
+       text-decoration: none;
+       color: black
    }
    button:hover {
        cursor: pointer;
        background-color: #ff66b6;  
        border: none;
    }
-button:active {
+ button:active {
 border: none;
 }
 .error-input {
@@ -59,4 +61,10 @@ border: solid red;
 }
 .error-text {
 color: red
+}
+
+.forgot:hover {
+  cursor: pointer;
+  background-color: #ff66b6;  
+  border: none;
 }

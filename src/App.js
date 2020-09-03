@@ -27,7 +27,7 @@ function App() {
      <Route exact path='/' render={() => <Redirect to='/new/1'/>} />
      <Route path='/create' component={Create} />
      <Route path='/login' component={Login} />
-     <Route path='/forgotpassword' component={ForgotPassword} />
+     <Route path='/forgot' component={ForgotPassword} />
      <Route path='/search' component={Search} />
      <Route path='/popular' component={AllLinks} />
      <Route path='/new/:page' component={AllLinks} />

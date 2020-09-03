@@ -34,6 +34,12 @@ class Firebase {
 async logout() {
 await this.auth.signOut()
 }
+
+//provide email parameter to reset the passport, if forgot
+async resetPassword(email){
+    await this.auth.sendPasswordResetEmail(email)
+}
+
 }
 
 // instantiate class to user

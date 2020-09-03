@@ -3,6 +3,7 @@ import './login.css';
 import useFormValid from "./useFormValid";
 import validateLogin from "./validateLogin";
 import firebase from '../../firebase';
+import { Link } from 'react-router-dom';
 
 //using custom hook useValid for form validation
 //creating an object to have properties and reuse it
@@ -56,6 +57,11 @@ return (
 {!login ? "Or sign in" : "Or create account"}
            </button>
             </form>
+            <div>
+                <Link className="forgot" to="/forgot">
+                    Forgot password?
+                </Link>
+            </div>
         </div>
     )
 }
