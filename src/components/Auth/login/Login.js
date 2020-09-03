@@ -14,6 +14,7 @@ password: ""
 
 export default function Login(props) {
 const [login, setLogin] = useState(true);
+const [firebaseError, setFirebaseError] = useState(null);
 //call the custom hook in the top, passing initial state:
 //validateLogin - second argument in the hook
 const { handleSubmit, handleBlur, handleChange, values, errors, submitting } = useFormValid(INITIAL_STATE, validateLogin, authenticateUser);
@@ -22,10 +23,18 @@ const { handleSubmit, handleBlur, handleChange, values, errors, submitting } = u
 async function authenticateUser(){
     const {name, email, password } = values;
     //first determin, which to call
-    const response = 
+    //wrap in try and catch. otherwise if try to login with user that doesn't exit, it says in console 'unhandled promise'
+    try {
+          const response = 
 login ? await firebase.login(email, password) //if login is true, excecute login method
 : await firebase.register(name, email, password); //otherwise excecute register method
-console.log({ response })
+//console.log({ response });
+    }
+    catch (err){
+        console.error('Authentication error', err)
+        setFirebaseError(err.message);
+    }
+  
 }
 
 
@@ -38,6 +47,8 @@ return (
                 {errors.email && <p className="error-text">{errors.email}</p>}
                 <input name="password" value={values.password} onChange={handleChange} onBlur={handleBlur} className={errors.password && 'error-input'} type="password" placeholder="Type a secure password" />
                 {errors.password && <p className="error-text">{errors.password}</p>}
+          
+{firebaseError && <p className="error-text">{firebaseError}</p>}
            <button type="submit" disabled={submitting}>Submit</button>
            <button type="button" onClick={() => setLogin(prevLogin => !prevLogin)}>
 {!login ? "Or sign in" : "Or create account"}
