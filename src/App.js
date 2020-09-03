@@ -9,12 +9,17 @@ import Search from './components/Search';
 import AllLinks from './components/AllLinks';
 import InDetail from './components/InDetail';
 import Header from './components/header/Header';
+import useAuth from './components/Auth/login/useAuth';
+import firebase, { FirebaseContext } from '../src/components/firebase';
 
  //installed npm i react-router-dom --save
 //created routing to components, where home path is redirected to the first page of '/new'
 function App() {
+  const user = useAuth();
+   
   return (
      <BrowserRouter>
+     <FirebaseContext.Provider value={{ user, firebase }}>
     <div className='app-container'>
       <Header />
       <div className='routing-container'>
@@ -30,6 +35,7 @@ function App() {
    </Switch>
       </div>
     </div>
+    </FirebaseContext.Provider>
    </BrowserRouter>
   );
 }

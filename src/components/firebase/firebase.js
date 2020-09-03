@@ -30,6 +30,10 @@ class Firebase {
             password
         )
     }
+
+async logout() {
+await this.auth.signOut()
+}
 }
 
 // instantiate class to user
