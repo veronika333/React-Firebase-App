@@ -29,6 +29,8 @@ async function authenticateUser(){
 login ? await firebase.login(email, password) //if login is true, excecute login method
 : await firebase.register(name, email, password); //otherwise excecute register method
 //console.log({ response });
+//when use is authenticated, push to the root route
+props.history.push('/');
     }
     catch (err){
         console.error('Authentication error', err)
