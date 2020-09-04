@@ -39,6 +39,7 @@ props.history.push('/');
     }
 
     return (
+        <div className="create-container">
         <form onSubmit={handleSubmit}>
             <input 
             onChange={handleChange}
@@ -62,5 +63,6 @@ props.history.push('/');
             {errors.url && <p className="error-text">{errors.url}</p>}
             <button type="submit">Submit</button>
         </form>
+        </div>
     )
 }

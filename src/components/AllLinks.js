@@ -24,7 +24,7 @@ function handleSnapshot(snapshot){ //passing snapshot of the data
 }
 
 return (
-        <div>
+        <div className="allLinks">
             {links.map((link, index) => (
                <InDetail key={link.id} showCount={true} link={link} index={index+1} />
             ))}

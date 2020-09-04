@@ -38,15 +38,15 @@ input {
   }
   
    .forgot, button {
-       margin: 4%;
+       margin: 2em;
        padding: 1em;
        border-radius: 1em;
        background-color: rgb(255, 186, 85);
        font-size: 19px;
-       border: none;
+       border: solid black;
        font-weight: bold;
        text-decoration: none;
-       color: black
+       color: black;
    }
    button:hover {
        cursor: pointer;

@@ -12,27 +12,28 @@ const { user, firebase } = React.useContext(FirebaseContext)
     return (
         <div className="nav">
             <div className="menu">
-                <img src="/logo.png" alt="Veronika's Logo" className="logo" />
-                <NavLink to="/" className="title">
+                {/* <img src="/logo.png" alt="Veronika's Logo" className="logo" /> */}
+                <p className="logo">VM☺</p>
+                <NavLink to="/" className="link">
                    Home
                 </NavLink>
-                <NavLink to="/new" className="link">
+                {/* <NavLink to="/new" className="link">
                     New
                 </NavLink>
                 <NavLink to="/popular" className="link">
                     Popular
                 </NavLink>
                 <NavLink to="/search" className="link">
-Search
-                </NavLink>
+                Search
+                </NavLink> */}
                 {user && (<NavLink to="/create" className="link">
-                    Submit
+                    Create Post
                 </NavLink>)}
             </div>
             <div className="login">
                 {user ? (
                     <>
-                    <div className="link">user: {user.displayName}</div>
+                    <div className="user">welcome {user.displayName}!</div>
                     <div className="link" onClick={() => firebase.logout()}> 
             {/* firebase comes from useContext */}
                         logout
