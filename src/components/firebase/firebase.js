@@ -11,7 +11,8 @@ class Firebase {
         app.initializeApp(firebaseConfig);
         //auth() method gives access to authentification related features
        // this.auth , so that we can reference it across the class
-        this.auth = app.auth()
+        this.auth = app.auth();
+        this.db = app.firestore(); //vreating this -reference within the class 
     }
 
     //have to await, because these methods return promises
