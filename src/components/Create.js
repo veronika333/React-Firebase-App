@@ -56,7 +56,7 @@ props.history.push('/');
             name="url"
             placeholder="Type URL for the link"
             autoComplete="off"
-            type="text"
+            type="url"
             className={errors.url && 'error-text'}>
             </input>
             {errors.url && <p className="error-text">{errors.url}</p>}
