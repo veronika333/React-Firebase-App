@@ -5,18 +5,18 @@ export default function ForgotPassword() {
  //bring in firebase
     const { firebase } = React.useContext(FirebaseContext) //bring in the whole firebase object    
 const [resetPasswordEmail, setResetPasswordEmail] = useState('')
-const [isPasswordReset, setIsPasswordReset] = React.useState(false)
-const [passwordResetError, setPasswordResetError] = React.useState(null)
+const [isPasswordReset, setIsPasswordReset] = useState(false)
+const [passwordResetError, setPasswordResetError] = useState(null)
 
 async function handleResetPassword(){
    try {
 await firebase.resetPassword(resetPasswordEmail)
-setIsPasswordReset(true)
+setIsPasswordReset(true);
+setPasswordResetError(null); 
    } catch (err) {
 console.error('Error when sending email', err)
 setPasswordResetError(err.message)
 setIsPasswordReset(false) //pass false to hide the message 'check email to reset password'
-setPasswordResetError(null); 
 }
 }
 
@@ -30,7 +30,7 @@ setPasswordResetError(null);
                <button onClick={handleResetPassword}>Reset Password</button>
            </div>
            {isPasswordReset && <p>Please check your email to reset password</p>}
-    {passwordResetError && <p className="error-text">{passwordResetError}</p>}
+    {passwordResetError && <p>{passwordResetError}</p>}
         </div>
     )
 }
