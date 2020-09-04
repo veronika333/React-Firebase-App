@@ -1,5 +1,20 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Deployment
+
+The link to the deployed project: https://react-firebase-app-aa5ca.web.app/new/1 . 
+
+## Functionality
+
+Functionality:
+-user registration
+-user login
+-forgot password
+-user logout
+-logged in users can create a new post
+-logged in users can "like" posts
+-data is stored in firebase
+
 ## Available Scripts
 
 In the project directory, you can run:
